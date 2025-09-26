@@ -1,0 +1,36 @@
+/*
+Custom Css
+*/
+
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#templatemo_nav_top {
+    background-color: #CA96D9 !important;
+}
+
+#title_ale{
+    color: purple;
+    font-size: 36px !important;
+    display: inline;
+    font-family: fantasy;
+}
+#title_beauty{
+    color: rgb(172, 114, 226);
+    font-size: 36px !important;
+    display: inline;
+    font-family: fantasy;
+}
+
+.bg-pie{
+    background-color: #DBC1E0;
+}
+
+/* .etiqueta_categorias img {
+    width: 100%;
+    height: 400px !important;
+    object-fit: cover;
+} */
