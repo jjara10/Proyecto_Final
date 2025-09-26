@@ -38,6 +38,11 @@ https://templatemo.com/tm-559-zay-shop
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categorias</h1>
                 <ul id="etiqueta_categorias" class="list-unstyled">
+                    <li class="pb-3">
+                        <a class="d-flex justify-content-between h3 text-decoration-none" href="productos.html">
+                            Mostrar todo
+                        </a>
+                    </li>
                     <!--Aqui van las categorias en productos-->
                 </ul>
             </div>
@@ -81,7 +86,7 @@ https://templatemo.com/tm-559-zay-shop
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white" href="shop-single.html"><i
                                                     class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i
+                                        <li><a class="btn btn-success text-white mt-2" href="detalle_producto.html?codigo_producto=${productos.codigo}"><i
                                                     class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i
                                                     class="fas fa-cart-plus"></i></a></li>
@@ -92,7 +97,7 @@ https://templatemo.com/tm-559-zay-shop
                             <div class="card-body">
                                 <a href="shop-single.html" class="h3 text-decoration-none">${productos.nombre}</a>
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li>Duration: ${productos.descripcion}</li>
+                                    <li>Descripción: ${productos.descripcion_list}</li>
                                 </ul>
                                 <ul class="list-unstyled d-flex justify-content-center mb-1">
                                     <li>
