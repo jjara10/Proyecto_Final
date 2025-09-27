@@ -24,9 +24,6 @@
 
     <div id="menu"></div>
     <!-- Contenido de la pagina -->
-
-    <div id="menu"></div>
-    <!-- Contenido de la pagina -->
     <div class="container py-5 ">
         <div class="row">
             <div class="col-md-7 m-auto">
@@ -37,7 +34,7 @@
                                 class="text-ale-color">$0</b></h2>
                         <hr>
                         <h5 class="card-title mb-3">Información de pago con tarjeta</h5>
-                        <form role="form" id="payment-form">
+                        <form role="form" id="pago-form">
                             <div class="mb-3">
                                 <label for="card-holder-name">Nombre del titular</label>
                                 <input type="text" class="form-control mt-1" id="card-holder-name"
@@ -77,6 +74,15 @@
         </div>
     </div>
     <script>
+        const Pago = document.getElementById('pago-form');
+        if (Pago) {
+            Pago.addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert("Pago exitoso!");
+                Pago.reset();
+            });
+        }
+
         // Obtener el total de la URL y mostrarlo
         const urlParams = new URLSearchParams(window.location.search);
         const totalAPagar = parseFloat(urlParams.get('total')) || 0;
