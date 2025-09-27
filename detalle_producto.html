@@ -74,13 +74,9 @@
                                     </div>
                                 </div>
                                 <div class="row pb-3">
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-ale-color btn-lg" name="submit"
-                                            value="buy">Comprar</button>
-                                    </div>
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-ale-color btn-lg" name="submit"
-                                            value="addtocard">Agregar al carro</button>
+                                    <div class="btn bg-ale-color text-decoration-none" id="boton-pagar-producto">
+                                        <a class="text-decoration-none bg-ale-color text-black" href="pagar.html"
+                                            target="target_blank">Pagar</a>
                                     </div>
                                 </div>
                             </form>
@@ -92,7 +88,6 @@
     </section>
 
     <script>
-
         // Obtener el parámetro de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const codigo_producto = urlParams.get('codigo_producto');
@@ -103,6 +98,10 @@
             document.getElementById("nombre-producto").innerText = producto.nombre;
             document.getElementById("costo-producto").innerText = `$${producto.precio.toLocaleString("es-CO")}`;
             document.getElementById("descripcion-producto").innerText = producto.descripcion;
+        }
+        const botonPagarProducto = document.querySelector("#boton-pagar-producto a");
+        if (botonPagarProducto) {
+            botonPagarProducto.href = `pagar.html?total=${producto.precio}`;
         }
 
     </script>

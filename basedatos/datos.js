@@ -8,12 +8,12 @@ const elementos_carrusel = [
     },
     {
         nombre: "Gel Dermanat Hidratante Facial 50ml",
-        descripcion: "El Gel Dermanat Hidratante Facial 50ml ofrece una hidratación profunda sin dejar sensación grasosa ni brillo en la piel. Su fórmula avanzada combina dos tipos de ácido hialurónico, ceramidas y colágeno, que trabajan en conjunto para fortalecer la barrera cutánea, mejorar la elasticidad y prevenir los signos de envejecimiento. Además, está enriquecido con extractos naturales de centella asiática, aloe vera y té verde, conocidos por sus propiedades calmantes, antioxidantes y seborreguladoras. Ideal para todo tipo de piel, incluso las más sensibles, este gel ligero se absorbe rápidamente y puede usarse tanto en la rutina de día como de noche. Libre de alcohol, aceites, sulfatos y parabenos, y no probado en animales.",
+        descripcion: "El Gel Dermanat Hidratante Facial 50ml ofrece una hidratación profunda sin dejar sensación grasosa ni brillo en la piel. Su fórmula avanzada combina dos tipos de ácido hialurónico, ceramidas y colágeno, que trabajan en conjunto para fortalecer la barrera cutánea, mejorar la elasticidad y prevenir los signos de envejecimiento. Ideal para todo tipo de piel, incluso las más sensibles, este gel ligero se absorbe rápidamente y puede usarse tanto en la rutina de día como de noche. Libre de alcohol, aceites, sulfatos y parabenos, y no probado en animales.",
         imagen: "imagenes/Dermanat_Hidratante_Facial.jpg"
     },
     {
         nombre: "Crema Hidratante REVUELE Doble Hyaluron + B5",
-        descripcion: "La Crema Hidratante REVUELE Doble Hyaluron + B5 está formulada para rostro y cuello con una textura delicada y ultrahidratante. Combina dos tipos de ácido hialurónico —de alto y bajo peso molecular— que penetran en distintas capas de la piel, proporcionando hidratación profunda y duradera. Su acción dual ayuda a rellenar líneas de expresión, mejorar la elasticidad y dejar la piel más suave y tersa. Enriquecida con provitamina B5, conocida por sus propiedades calmantes y reparadoras, esta crema revitaliza visiblemente la piel y contribuye a reducir arrugas con el uso continuo. Ideal para piel seca o madura, puede aplicarse tanto en la rutina de día como de noche.",
+        descripcion: "La Crema Hidratante REVUELE Doble Hyaluron + B5 está formulada para rostro y cuello con una textura delicada y ultrahidratante. Combina dos tipos de ácido hialurónico —de alto y bajo peso molecular— que penetran en distintas capas de la piel, proporcionando hidratación profunda y duradera. Su acción dual ayuda a rellenar líneas de expresión, mejorar la elasticidad y dejar la piel más suave y tersa. Enriquecida con provitamina B5, conocida por sus propiedades calmantes y reparadoras, esta crema revitaliza visiblemente la piel y contribuye a reducir arrugas con el uso continuo.",
         imagen: "imagenes/Hyaluron.jpg"
     }
 ]
@@ -146,7 +146,7 @@ const lista_productos = [
         codigo: "2110",
         nombre: "Gel Dermanat Hidratante Facial 50ml",
         descripcion_list: "Jabón con carbón activado y menta que purifica, tonifica y reduce el brillo de la piel.",
-        descripcion: "El Gel Dermanat Hidratante Facial 50ml ofrece una hidratación profunda sin dejar sensación grasosa ni brillo en la piel. Su fórmula avanzada combina dos tipos de ácido hialurónico, ceramidas y colágeno, que trabajan en conjunto para fortalecer la barrera cutánea, mejorar la elasticidad y prevenir los signos de envejecimiento. Además, está enriquecido con extractos naturales de centella asiática, aloe vera y té verde, conocidos por sus propiedades calmantes, antioxidantes y seborreguladoras. Ideal para todo tipo de piel, incluso las más sensibles, este gel ligero se absorbe rápidamente y puede usarse tanto en la rutina de día como de noche. Libre de alcohol, aceites, sulfatos y parabenos, y no probado en animales.",
+        descripcion: "El Gel Dermanat Hidratante Facial 50ml ofrece una hidratación profunda sin dejar sensación grasosa ni brillo en la piel. Su fórmula avanzada combina dos tipos de ácido hialurónico, ceramidas y colágeno, que trabajan en conjunto para fortalecer la barrera cutánea, mejorar la elasticidad y prevenir los signos de envejecimiento. Ideal para todo tipo de piel, incluso las más sensibles, este gel ligero se absorbe rápidamente y puede usarse tanto en la rutina de día como de noche. Libre de alcohol, aceites, sulfatos y parabenos, y no probado en animales.",
         codigo_categoria: "1030",
         imagen: "imagenes/Dermanat_Hidratante_Facial.jpg",
         precio: 46000,
@@ -163,3 +163,5 @@ const lista_productos = [
         calificacion: 4
     }
 ]
+
+let carrito = []

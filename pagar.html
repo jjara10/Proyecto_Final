@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ale Beauty</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+
+</head>
+
+<body>
+
+    <div id="menu"></div>
+    <!-- Contenido de la pagina -->
+
+    <div id="menu"></div>
+    <!-- Contenido de la pagina -->
+    <div class="container py-5 ">
+        <div class="row">
+            <div class="col-md-7 m-auto">
+                <h1 class="h1 text-center mb-4">Finalizar Compra</h1>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="h3 text-center mb-4">Valor a cancelar: <b id="valor-a-cancelar"
+                                class="text-ale-color">$0</b></h2>
+                        <hr>
+                        <h5 class="card-title mb-3">Información de pago con tarjeta</h5>
+                        <form role="form" id="payment-form">
+                            <div class="mb-3">
+                                <label for="card-holder-name">Nombre del titular</label>
+                                <input type="text" class="form-control mt-1" id="card-holder-name"
+                                    placeholder="Nombre como aparece en la tarjeta" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="card-number">Número de la tarjeta</label>
+                                <input type="text" class="form-control mt-1" id="card-number"
+                                    placeholder="0000 0000 0000 0000" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="expiry-date">Fecha de vencimiento</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="MM" id="expiry-month"
+                                            required>
+                                        <span class="input-group-text">/</span>
+                                        <input type="text" class="form-control" placeholder="AA" id="expiry-year"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" class="form-control mt-1" id="cvv" placeholder="123"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center mt-4">
+                                    <button type="submit" class="btn btn-ale-color btn-lg px-5">Pagar ahora</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Obtener el total de la URL y mostrarlo
+        const urlParams = new URLSearchParams(window.location.search);
+        const totalAPagar = parseFloat(urlParams.get('total')) || 0;
+        document.getElementById('valor-a-cancelar').innerText = `$${totalAPagar.toLocaleString("es-CO")}`;
+    </script>
+    <!-- Fin Contenido de la pagina -->
+
+    <div id="pie"></div>
+    <!-- Start Script -->
+    <script src="basedatos/datos.js"></script>
+    <script src="basedatos/consultas.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/templatemo.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- End Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            cargarFragmento("menu", "menu.html");
+            cargarFragmento("pie", "pie.html");
+        }); 
+    </script>
+</body>
+
+
+<!-- Fin Contenido de la pagina -->
+<div id="pie"></div>
+<!-- Start Script -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/templatemo.js"></script>
+<script src="js/custom.js"></script>
+<!-- End Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        cargarFragmento("menu", "menu.html");
+        cargarFragmento("pie", "pie.html");
+    }); 
+</script>
+</body>
+
+</html>
