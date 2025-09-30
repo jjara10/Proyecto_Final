@@ -37,7 +37,9 @@ function mostrarCarrito() {
     let etiqueta_carrito = document.getElementById("etiqueta_carrito");
     let costoTotal = 0;
     etiqueta_carrito.innerHTML = "";
- 
+
+    carrito = obtenerCarrito();
+
     carrito.forEach((elemento, posicion) => {
         let li = document.createElement("li");
         li.innerHTML = `
@@ -62,32 +64,54 @@ function mostrarCarrito() {
     if (botonPagar) {
         botonPagar.href = `pagar.html?total=${costoTotal}`;
     }
+
+    // Actualizar el contador del carrito en el menú
+    const cartBadge = document.getElementById("cart-badge");
+    if (cartBadge) {
+        cartBadge.innerText = obtenerCarrito().length;
+    }
 }
 
-// function obtenerCarrito() {
-//     const str = localStorage.getItem("carrito");
-//     if (str) {
-//         carrito = JSON.parse(str);
-//     }
-//     return carrito;
-// }
+function actualizarContadorCarrito() {
+    // Actualiza solo el contador del carrito en el menú
+    const cartBadge = document.getElementById("cart-badge");
+    if (cartBadge) {
+        cartBadge.innerText = obtenerCarrito().length;
+    }
+}
 
-function agregarProductoServicio(producto){
+function obtenerCarrito() {
+    let carrito = [];
+    const str = localStorage.getItem("carrito");
+    if (str) {
+        carrito = JSON.parse(str);
+    }
+    return carrito;
+}
+
+function agregarProductoServicio(producto, mostrar = true) {
+    let carrito = obtenerCarrito();
+    // Verificar si el producto ya está en el carrito
     carrito.push(producto);
-    mostrarCarrito();
+    // Almacenar la información del carrito de compras en el local storage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    if (mostrar === true) {
+        mostrarCarrito(); // Actualiza la vista del carrito en productos.html
+    }
 }
-
-// function eliminarProductoServicio(codigo){
-//     carrito = carrito.filter(producto => producto.codigo !== codigo);
-//     mostrarCarrito();
-// }
 
 function eliminarProductoServicio(posicion) {
+    let carrito = obtenerCarrito();
+    // Eliminar el producto del carrito
     carrito.splice(posicion, 1);
-    mostrarCarrito();
+    // Almacenar la información del carrito de compras en el local storage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito(); // Actualiza la vista del carrito en productos.html
 }
 
 function vaciarCarrito() {
     carrito = [];
-    mostrarCarrito();
+    // Almacenar la información del carrito de compras en el local storage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito(); // Actualiza la vista del carrito en productos.html
 }

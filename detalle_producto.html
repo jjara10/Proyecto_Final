@@ -5,7 +5,7 @@
     <title>Ale Beauty</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="imagenes/icon_page.png">
     <link rel="apple-touch-icon" href="img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
@@ -32,8 +32,8 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="assets/img/product_single_10.jpg" alt="Card image cap"
-                            id="product-detail">
+                        <img class="card-img img-fluid" alt="Card image cap"
+                            id="product-detalle">
                     </div>
                 </div>
                 <!-- col end -->
@@ -53,33 +53,17 @@
                             <h6>Descripción:</h6>
                             <p id="descripcion-producto"></p>
 
-                            <form action="" method="GET">
-                                <input type="hidden" name="product-title" value="${producto.nombre}">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item text-right">
-                                                Cantidad
-                                                <input type="hidden" name="product-quanity" id="product-quanity"
-                                                    value="1">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-ale-color"
-                                                    id="btn-minus">-</span>
-                                            </li>
-                                            <li class="list-inline-item"><span class="badge bg-secondary"
-                                                    id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-ale-color"
-                                                    id="btn-plus">+</span></li>
-                                        </ul>
-                                    </div>
+                            <div class="row pb-3">
+                                <div class="col d-grid">
+                                    <button id="boton_agregar" type="button" class="btn btn-success btn-lg"
+                                        name="submit">Agregar al carrito</button>
                                 </div>
-                                <div class="row pb-3">
-                                    <div class="btn bg-ale-color text-decoration-none" id="boton-pagar-producto">
-                                        <a class="text-decoration-none bg-ale-color text-black" href="pagar.html"
-                                            target="target_blank">Pagar</a>
-                                    </div>
+                                <div class="col d-grid">
+                                    <button id="boton_regresar" type="button"
+                                        class="btn btn-success btn-lg bg-ale-color" name="submit"
+                                        onclick="window.history.back()">Regresar</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,16 +78,15 @@
 
         let producto = obtenerProductoServicioPorCodigo(codigo_producto);
         if (producto) {
-            document.getElementById("product-detail").src = producto.imagen;
+            document.getElementById("product-detalle").src = producto.imagen;
             document.getElementById("nombre-producto").innerText = producto.nombre;
             document.getElementById("costo-producto").innerText = `$${producto.precio.toLocaleString("es-CO")}`;
             document.getElementById("descripcion-producto").innerText = producto.descripcion;
+            document.getElementById("boton_agregar").addEventListener("click", () => {
+                agregarProductoServicio(producto, false);
+                window.history.back();
+            });
         }
-        const botonPagarProducto = document.querySelector("#boton-pagar-producto a");
-        if (botonPagarProducto) {
-            botonPagarProducto.href = `pagar.html?total=${producto.precio}`;
-        }
-
     </script>
 
 
@@ -119,8 +102,10 @@
     <script src="js/custom.js"></script>
     <!-- End Script -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            cargarFragmento("menu", "menu.html");
+        document.addEventListener("DOMContentLoaded", async () => { // Convertimos la función en async
+            // Se espera a que el menú se cargue por completo
+            await cargarFragmento("menu", "menu.html");
+            actualizarContadorCarrito(); // Actualizamos el contador
             cargarFragmento("pie", "pie.html");
         }); 
     </script>

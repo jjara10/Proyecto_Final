@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
 
     <script src="basedatos/datos.js"></script>
+    <script src="basedatos/consultas.js"></script>
 </head>
 
 <body>
@@ -129,10 +130,12 @@
     <script src="js/custom.js"></script>
     <!-- End Script -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            cargarFragmento("menu", "menu.html");
+        document.addEventListener("DOMContentLoaded", async () => { // Convertimos la función en async
+            // Se espera a que el menú se cargue por completo
+            await cargarFragmento("menu", "menu.html");
+            actualizarContadorCarrito(); // Actualizamos el contador
             cargarFragmento("pie", "pie.html");
-        });
+        }); 
     </script>
 </body>
 

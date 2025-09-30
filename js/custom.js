@@ -1,11 +1,19 @@
-// Función que lee el contenido de un archivo y lo inserta en un elemento 
-// HTML. Esta función se usará para cargar el menú y el pie de página. 
+/*
+    TemplateMo 559 Zay Shop
+    https://templatemo.com/tm-559-zay-shop
+*/
 
-function cargarFragmento(idElemento, archivo) {
-    fetch(archivo)
-        .then(respuesta => respuesta.text())
-        .then(contenido => {
-            document.getElementById(idElemento).innerHTML = contenido;
+'use strict';
+
+// Función para cargar fragmentos de HTML (como menu.html y pie.html)
+// Devuelve una promesa que se resuelve cuando el fragmento se ha cargado.
+function cargarFragmento(id, url) {
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error(`Error al cargar ${url}: ${response.statusText}`);
+            return response.text();
         })
-        .catch(error => console.error(`Error cargando ${archivo}:`, error));
+        .then(data => {
+            document.getElementById(id).innerHTML = data;
+        });
 }

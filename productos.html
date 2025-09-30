@@ -5,7 +5,7 @@
     <title>Ale Beauty</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="imagenes/icon_page.png">
     <link rel="apple-touch-icon" href="img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
@@ -109,7 +109,7 @@ https://templatemo.com/tm-559-zay-shop
                         etiqueta_productos.appendChild(div_col);
 
                         div_col.querySelector(".btn-add").addEventListener("click", () => {
-                            agregarProductoServicio(productos);
+                            agregarProductoServicio(productos, true);
                         });
                     });
                 </script>
@@ -147,9 +147,6 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
 
             </div>
-            <script>
-                mostrarCarrito();
-            </script>
             <!--Carrito de compras final-->
         </div>
     </div>
@@ -164,8 +161,11 @@ https://templatemo.com/tm-559-zay-shop
     <script src="js/custom.js"></script>
     <!-- End Script -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            cargarFragmento("menu", "menu.html");
+        document.addEventListener("DOMContentLoaded", async () => { // Convertimos la función en async
+            // Se espera a que el menú se cargue por completo
+            await cargarFragmento("menu", "menu.html");
+            actualizarContadorCarrito(); // Actualizamos el contador
+            mostrarCarrito(); // Mostramos el detalle del carrito (solo en esta página)
             cargarFragmento("pie", "pie.html");
         }); 
     </script>
