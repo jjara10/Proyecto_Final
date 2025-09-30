@@ -83,7 +83,6 @@
                 alert("Pago exitoso!");
                 Pago.reset();
                 vaciarCarrito()
-                location.href ="productos.html";
             });
         }
         // Obtener el total de la URL y mostrarlo
@@ -115,14 +114,14 @@
 <script src="js/templatemo.js"></script>
 <script src="js/custom.js"></script>
 <!-- End Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", async () => { // Convertimos la función en async
-            // Se espera a que el menú se cargue por completo
-            await cargarFragmento("menu", "menu.html");
-            actualizarContadorCarrito(); // Actualizamos el contador
-            cargarFragmento("pie", "pie.html");
-        }); 
-    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", async () => { // Convertimos la función en async
+        // Se espera a que el menú se cargue por completo
+        await cargarFragmento("menu", "menu.html");
+        actualizarContadorCarrito(); // Actualizamos el contador
+        cargarFragmento("pie", "pie.html");
+    }); 
+</script>
 </body>
 
 </html>
