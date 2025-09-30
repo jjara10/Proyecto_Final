@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Proyecto final Talento Tech
-Este proyecto se implementa para demostrar las habilidades adquiridas en el bootcamp Talento Tech
-=======
 # Ale Beauty - Proyecto Final Talento Tech
 
 Este repositorio contiene el código fuente de "Ale Beauty", una tienda en línea de productos de belleza y cuidado de la piel. El proyecto fue desarrollado como entrega final para el bootcamp **Talento Tech**, con el objetivo de aplicar y demostrar las habilidades adquiridas en desarrollo web frontend.
@@ -60,4 +56,3 @@ Dado que es un proyecto frontend estático, no requiere un servidor complejo par
     Navega a la carpeta del proyecto y abre el archivo `index.html` en tu navegador web.
 
     > **Nota**: Para que la carga dinámica del menú y pie de página (`fetch`) funcione correctamente, se recomienda servir los archivos a través de un servidor local. Puedes usar extensiones como **Live Server** en Visual Studio Code.
->>>>>>> test
